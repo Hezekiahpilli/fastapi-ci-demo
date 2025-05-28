@@ -1,0 +1,5 @@
+echo 'FROM public.ecr.aws/lambda/python:3.9
+RUN pip install --upgrade pip
+WORKDIR /build
+COPY requirements.txt .
+RUN pip install -r requirements.txt -t /lambda-package' > Dockerfile.lambda
