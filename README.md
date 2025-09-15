@@ -20,6 +20,13 @@ uvicorn app.main:app --reload
 
 Then browse to `http://127.0.0.1:8000/` to confirm the `"FastAPI running on Lambda!"` response.
 
+### Available Endpoints
+
+- `GET /` – Root endpoint that returns a welcome message.
+- `GET /status` – Reports a simple health payload that includes the server's
+  current time (UTC) and uptime in seconds. This is handy for smoke tests or
+  CloudWatch alarms that need a quick liveness indicator.
+
 ## Packaging for AWS Lambda
 
 1. Use the provided `Dockerfile.lambda` to build your dependency layer and application package:
